@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Dusty cloud engineers get all the jobs, all the money, and all the beaches!</h1>
+
+  <div class="carousel-container">
+    <button onclick="changeSlide(-1)">❮ Prev</button>
+
+    <img id="carousel-image" src="assets/images/beaches/bali-indonesia.jpg" alt="Beach Carousel">
+
+    <button onclick="changeSlide(1)">Next ❯</button>
+  </div>
+
+  <script>
+    const images = [
+      "assets/images/beaches/bali-indonesia.jpg",
+      "assets/images/beaches/bora-bora-french-polynesia.jpg",
+      "assets/images/beaches/fiji.jpg",
+      "assets/images/beaches/krabi-thailand.jpg",
+      "assets/images/beaches/maldives.jpg",
+      "assets/images/beaches/maui-hawaii.jpg",
+      "assets/images/beaches/sardinia-italy.jpg",
+      "assets/images/beaches/seychelles.jpg",
+      "assets/images/beaches/turks-and-caicos.jpg",
+      "assets/images/beaches/whitsunday-islands-australia.jpg"
+    ];
+
+    let currentIndex = 0;
+
+    function changeSlide(direction) {
+      currentIndex += direction;
+
+      if (currentIndex < 0) {
+        currentIndex = images.length - 1;
+      }
+
+      if (currentIndex >= images.length) {
+        currentIndex = 0;
+      }
+
+      document.getElementById("carousel-image").src = images[currentIndex];
+    }
+  </script>
+</body>
+</html>
